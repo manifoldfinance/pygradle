@@ -22,16 +22,15 @@ import java.io.UncheckedIOException;
 import java.util.Properties;
 
 class VersionFile {
-    private static final String VERSION = "version";
+  private static final String VERSION = "version";
 
-    static Version getVersion(File propertyFile) {
-        try {
-            Properties properties = new Properties();
-            properties.load(new FileReader(propertyFile));
-            return new Version(properties.getProperty(VERSION));
-        } catch (IOException ioe) {
-            throw new UncheckedIOException(ioe);
-        }
+  static Version getVersion(File propertyFile) {
+    try {
+      Properties properties = new Properties();
+      properties.load(new FileReader(propertyFile));
+      return new Version(properties.getProperty(VERSION));
+    } catch (IOException ioe) {
+      throw new UncheckedIOException(ioe);
     }
-
+  }
 }
